@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276 72" role="img" aria-label="Kumsal Yüzme Akademisi">
+  <path d="M7 49c12 0 12-8 24-8s12 8 24 8 12-8 24-8v10c-12 0-12 8-24 8s-12-8-24-8-12 8-24 8z" fill="#18bed1"/>
+  <path d="M17 34c10 0 12-17 25-17 10 0 17 8 24 19-14-4-23 1-30 7-7 5-14 4-19-9z" fill="#005b8f"/>
+  <circle cx="44" cy="15" r="6" fill="#ff7a00"/>
+  <text x="92" y="31" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#00345f">KUMSAL</text>
+  <text x="92" y="52" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#006b91">YÜZME AKADEMİSİ</text>
+</svg>
