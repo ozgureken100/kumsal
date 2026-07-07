@@ -8,6 +8,12 @@ export function waLink(message: string): string {
   return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`
 }
 
+// public/ klasöründeki dosyalara BASE_URL'e göre yol üretir; GitHub Pages gibi
+// alt yoldan (ör. /kumsal/) yayınlarda da, kök yoldan (Netlify) yayınlarda da doğru çalışır.
+export function asset(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+}
+
 /* ---------- Carousel ---------- */
 export interface CarouselItem {
   src: string
@@ -15,14 +21,14 @@ export interface CarouselItem {
 }
 
 export const carouselItems: CarouselItem[] = [
-  { src: '/images/pool-main-1.jpeg', caption: 'Havuzdan kareler' },
-  { src: '/images/pool-main-2.jpeg', caption: 'Eğitim havuzu' },
-  { src: '/images/class-group-1.jpeg', caption: 'Grup dersi' },
-  { src: '/images/class-group-2.jpeg', caption: 'Çocuk grupları' },
-  { src: '/images/kurs-programi.jpeg', caption: 'Kurs duyuruları' },
-  { src: '/images/ozel-ders.jpeg', caption: 'Özel ders' },
-  { src: '/images/trainer-action.jpeg', caption: 'Ders anı' },
-  { src: '/images/competition-2.jpeg', caption: 'Performans' },
+  { src: 'images/pool-main-1.jpeg', caption: 'Havuzdan kareler' },
+  { src: 'images/pool-main-2.jpeg', caption: 'Eğitim havuzu' },
+  { src: 'images/class-group-1.jpeg', caption: 'Grup dersi' },
+  { src: 'images/class-group-2.jpeg', caption: 'Çocuk grupları' },
+  { src: 'images/kurs-programi.jpeg', caption: 'Kurs duyuruları' },
+  { src: 'images/ozel-ders.jpeg', caption: 'Özel ders' },
+  { src: 'images/trainer-action.jpeg', caption: 'Ders anı' },
+  { src: 'images/competition-2.jpeg', caption: 'Performans' },
 ]
 
 /* ---------- Programlar ---------- */
@@ -40,7 +46,7 @@ export const programs: Program[] = [
   {
     id: 'cocuk-yuzme',
     title: 'Çocuk Yüzme',
-    image: '/images/class-group-1.jpeg',
+    image: 'images/class-group-1.jpeg',
     description:
       '4-14 yaş arası çocuklar için seviyelerine göre ayrılmış küçük gruplarda temel yüzme ve stil eğitimi.',
     age: '4 – 14 yaş',
@@ -50,7 +56,7 @@ export const programs: Program[] = [
   {
     id: 'yetiskin-yuzme',
     title: 'Yetişkin Yüzme',
-    image: '/images/pool-main-1.jpeg',
+    image: 'images/pool-main-1.jpeg',
     description:
       'Sıfırdan başlayanlar ve tekniğini geliştirmek isteyen yetişkinler için sabırlı ve planlı eğitim.',
     age: '15 yaş ve üzeri',
@@ -60,7 +66,7 @@ export const programs: Program[] = [
   {
     id: 'ozel-ders',
     title: 'Özel Ders',
-    image: '/images/ozel-ders.jpeg',
+    image: 'images/ozel-ders.jpeg',
     description:
       'Birebir ilgi ve kişiye özel programla en hızlı gelişim. Her yaş ve seviye için uygundur.',
     age: 'Her yaş',
@@ -70,7 +76,7 @@ export const programs: Program[] = [
   {
     id: 'teknik-gelisim',
     title: 'Teknik Gelişim',
-    image: '/images/trainer-action.jpeg',
+    image: 'images/trainer-action.jpeg',
     description:
       'Yüzme bilen ama stillerini geliştirmek isteyenler için serbest, sırt, kurbağalama ve kelebek teknik dersleri.',
     age: '7 yaş ve üzeri',
@@ -80,7 +86,7 @@ export const programs: Program[] = [
   {
     id: 'performans',
     title: 'Performans Yüzücülüğü',
-    image: '/images/competition-2.jpeg',
+    image: 'images/competition-2.jpeg',
     description:
       'Lisanslı sporcu altyapısı: müsabakalara hazırlık, antrenman programı ve yarış tecrübesi.',
     age: '8 – 18 yaş',
@@ -104,35 +110,35 @@ export const trainers: Trainer[] = [
     role: 'Kurucu & Baş Antrenör',
     experience: "2008'den beri yüzme eğitiminde",
     expertise: 'Temel yüzme eğitimi, su korkusu ile çalışma, performans antrenörlüğü',
-    image: '/images/trainer-guneri.jpeg',
+    image: 'images/trainer-guneri.jpeg',
   },
   {
     name: 'Asya Hoca',
     role: 'Yüzme Antrenörü',
     experience: 'Çocuk ve yetişkin gruplarında deneyimli',
     expertise: 'Çocuk grupları, temel teknik eğitimi',
-    image: '/images/trainer-asya.jpeg',
+    image: 'images/trainer-asya.jpeg',
   },
   {
     name: 'Sıla Hoca',
     role: 'Yüzme Antrenörü',
     experience: 'Çocuk yüzme ve kadınlara özel derslerde deneyimli',
     expertise: 'Çocuk grupları, kadınlara özel dersler',
-    image: '/images/trainer-sila.jpeg',
+    image: 'images/trainer-sila.jpeg',
   },
   {
     name: 'Rabia Hoca',
     role: 'Yüzme Antrenörü',
     experience: 'Başlangıç seviyesi gruplarında deneyimli',
     expertise: 'Çocuk grupları, başlangıç seviyesi eğitimi',
-    image: '/images/trainer-rabia.jpeg',
+    image: 'images/trainer-rabia.jpeg',
   },
   {
     name: 'Onuralp Hoca',
     role: 'Yüzme Antrenörü',
     experience: 'Performans grubu antrenörlüğünde deneyimli',
     expertise: 'Teknik gelişim, lisanslı sporcu altyapısı',
-    image: '/images/trainer-onuralp.jpeg',
+    image: 'images/trainer-onuralp.jpeg',
   },
 ]
 
@@ -146,21 +152,21 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  { src: '/images/pool-main-1.jpeg', alt: 'Ana havuz', category: 'Tesis' },
-  { src: '/images/pool-main-2.jpeg', alt: 'Eğitim havuzu', category: 'Tesis' },
-  { src: '/images/locker-room.jpeg', alt: 'Soyunma odaları', category: 'Tesis' },
-  { src: '/images/shower.jpeg', alt: 'Duş alanları', category: 'Tesis' },
-  { src: '/images/ankara-genel.jpeg', alt: 'Tesisten genel görünüm', category: 'Tesis' },
-  { src: '/images/class-group-1.jpeg', alt: 'Çocuk grup dersi', category: 'Çocuk' },
-  { src: '/images/class-group-2.jpeg', alt: 'Grup dersinden bir kare', category: 'Çocuk' },
-  { src: '/images/neden-kumsal.jpeg', alt: 'Kumsal yüzücüleri', category: 'Çocuk' },
-  { src: '/images/ozel-ders.jpeg', alt: 'Birebir özel ders', category: 'Eğitim' },
-  { src: '/images/trainer-action.jpeg', alt: 'Ders anı', category: 'Eğitim' },
-  { src: '/images/competition-1.jpeg', alt: 'Yarışma günü', category: 'Eğitim' },
-  { src: '/images/competition-2.jpeg', alt: 'Müsabaka heyecanı', category: 'Eğitim' },
-  { src: '/images/competition-3.jpeg', alt: 'Performans grubumuz', category: 'Eğitim' },
-  { src: '/images/club-flag-1.jpeg', alt: 'Kulüp ruhu', category: 'Eğitim' },
-  { src: '/images/club-flag-2.jpeg', alt: 'Takımımız', category: 'Eğitim' },
+  { src: 'images/pool-main-1.jpeg', alt: 'Ana havuz', category: 'Tesis' },
+  { src: 'images/pool-main-2.jpeg', alt: 'Eğitim havuzu', category: 'Tesis' },
+  { src: 'images/locker-room.jpeg', alt: 'Soyunma odaları', category: 'Tesis' },
+  { src: 'images/shower.jpeg', alt: 'Duş alanları', category: 'Tesis' },
+  { src: 'images/ankara-genel.jpeg', alt: 'Tesisten genel görünüm', category: 'Tesis' },
+  { src: 'images/class-group-1.jpeg', alt: 'Çocuk grup dersi', category: 'Çocuk' },
+  { src: 'images/class-group-2.jpeg', alt: 'Grup dersinden bir kare', category: 'Çocuk' },
+  { src: 'images/neden-kumsal.jpeg', alt: 'Kumsal yüzücüleri', category: 'Çocuk' },
+  { src: 'images/ozel-ders.jpeg', alt: 'Birebir özel ders', category: 'Eğitim' },
+  { src: 'images/trainer-action.jpeg', alt: 'Ders anı', category: 'Eğitim' },
+  { src: 'images/competition-1.jpeg', alt: 'Yarışma günü', category: 'Eğitim' },
+  { src: 'images/competition-2.jpeg', alt: 'Müsabaka heyecanı', category: 'Eğitim' },
+  { src: 'images/competition-3.jpeg', alt: 'Performans grubumuz', category: 'Eğitim' },
+  { src: 'images/club-flag-1.jpeg', alt: 'Kulüp ruhu', category: 'Eğitim' },
+  { src: 'images/club-flag-2.jpeg', alt: 'Takımımız', category: 'Eğitim' },
 ]
 
 /* ---------- SSS ---------- */
@@ -251,7 +257,7 @@ export const branches: Branch[] = [
     ratingDetail: 'Harita puanı',
     description:
       "Şehrin tam merkezinde, TED Üniversitesi'nin modern yüzme havuzunda çocuk, kadın ve yetişkinlere yönelik yüzme dersleri veriyoruz. Ulaşımı en kolay şubemizdir; Kızılay metro ve otobüs hatlarına yürüme mesafesindedir.",
-    image: '/images/kizilay-afis.jpeg',
+    image: 'images/kizilay-afis.jpeg',
     mapQuery: 'TED Üniversitesi, Kızılay, Ankara',
     schedule: [
       { label: 'Hafta içi (Çarşamba - Cuma)', hours: ['18:00 - 19:00'] },
@@ -363,7 +369,7 @@ export const branches: Branch[] = [
     ratingDetail: 'Şube puanı',
     description:
       "Batıkent'te Ankara Teknoloji Koleji'nin temiz ve güvenli havuzunda 4-14 yaş çocuk grupları başta olmak üzere her seviyeye yüzme eğitimi veriyoruz. 4-6 kişilik küçük gruplarla yüksek verimli dersler yapıyoruz.",
-    image: '/images/batikent-afis.jpeg',
+    image: 'images/batikent-afis.jpeg',
     mapQuery: 'Ankara Teknoloji Koleji, Batıkent, Ankara',
     schedule: [
       { label: 'Hafta içi (Salı - Perşembe)', hours: ['18:00 - 19:00', '19:00 - 20:00'] },
@@ -490,7 +496,7 @@ export const branches: Branch[] = [
     ratingDetail: '38 yorum',
     description:
       "Söğütözü'nde TOBB Ekonomi ve Teknoloji Üniversitesi'nin modern yüzme havuzunda çocuk, kadın ve yetişkinlere profesyonel yüzme eğitimi veriyoruz. Lisanslı yüzücü programımızın merkez şubesidir.",
-    image: '/images/sogutozu-afis.jpeg',
+    image: 'images/sogutozu-afis.jpeg',
     mapQuery: 'TOBB ETÜ, Söğütözü, Ankara',
     schedule: [
       { label: 'Ders saatleri', hours: ['Güncel program için lütfen arayınız: 0542 553 22 09'] },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
-import { galleryItems, type GalleryCategory } from '../data'
+import { asset, galleryItems, type GalleryCategory } from '../data'
 
 const categories: Array<'Tümü' | GalleryCategory> = ['Tümü', 'Çocuk', 'Tesis', 'Eğitim']
 
@@ -55,7 +55,7 @@ export default function Gallery() {
               className="group block w-full overflow-hidden rounded-xl shadow-md shadow-ocean-900/10 focus:outline-none focus:ring-2 focus:ring-aqua-400"
             >
               <img
-                src={item.src}
+                src={asset(item.src)}
                 alt={item.alt}
                 loading="lazy"
                 className="w-full object-cover transition duration-500 group-hover:scale-105"
@@ -83,7 +83,7 @@ export default function Gallery() {
           </button>
           <figure className="max-h-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <img
-              src={lightbox.src}
+              src={asset(lightbox.src)}
               alt={lightbox.alt}
               className="max-h-[82vh] w-auto rounded-xl object-contain shadow-2xl"
             />

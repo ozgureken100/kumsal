@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ExternalLink, Instagram, X } from 'lucide-react'
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../data'
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, asset } from '../data'
 
 export default function InstagramWidget() {
   const [open, setOpen] = useState(false)
@@ -57,7 +57,7 @@ export default function InstagramWidget() {
               /* Embed engellenirse profil kartına düş */
               <div className="flex h-72 flex-col items-center justify-center gap-3 rounded-xl bg-aqua-50 text-center">
                 <img
-                  src="/images/logo.png"
+                  src={asset('images/logo.png')}
                   alt="Kumsal Yüzme Akademisi"
                   className="h-16 w-16 rounded-full object-contain"
                 />

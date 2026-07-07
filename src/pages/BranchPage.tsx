@@ -17,6 +17,7 @@ import {
   INSTAGRAM_URL,
   PHONE_DISPLAY,
   PHONE_TEL,
+  asset,
   waLink,
   type Branch,
 } from '../data'
@@ -32,7 +33,7 @@ export default function BranchPage({ branch }: { branch: Branch }) {
       {/* Şube hero */}
       <section className="relative overflow-hidden bg-ocean-950">
         <img
-          src={branch.image}
+          src={asset(branch.image)}
           alt={branch.title}
           className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-sm"
         />
@@ -72,7 +73,7 @@ export default function BranchPage({ branch }: { branch: Branch }) {
           </div>
 
           <img
-            src={branch.image}
+            src={asset(branch.image)}
             alt={`${branch.title} afişi`}
             className="mx-auto w-full max-w-sm rounded-2xl shadow-2xl shadow-ocean-950/60 ring-4 ring-white/10"
           />

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Clock, Users } from 'lucide-react'
-import { programs } from '../data'
+import { asset, programs } from '../data'
 
 export default function Programs() {
   return (
@@ -23,7 +23,7 @@ export default function Programs() {
             >
               <div className="relative h-52 overflow-hidden">
                 <img
-                  src={program.image}
+                  src={asset(program.image)}
                   alt={program.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDown, MapPin, Menu, Phone, X } from 'lucide-react'
-import { PHONE_DISPLAY, PHONE_TEL, branches } from '../data'
+import { PHONE_DISPLAY, PHONE_TEL, asset, branches } from '../data'
 
 const navItems = [
   { label: 'Ana Sayfa', to: '/' },
@@ -40,7 +40,7 @@ export default function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-3">
           <img
-            src="/images/logo.png"
+            src={asset('images/logo.png')}
             alt="Kumsal Yüzme Akademisi logosu"
             className="h-12 w-12 rounded-full object-contain"
           />

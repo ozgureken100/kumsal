@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Instagram, MapPin, Phone } from 'lucide-react'
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, PHONE_DISPLAY, PHONE_TEL, branches } from '../data'
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, PHONE_DISPLAY, PHONE_TEL, asset, branches } from '../data'
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logo.png"
+                src={asset('images/logo.png')}
                 alt="Kumsal Yüzme Akademisi logosu"
                 className="h-14 w-14 rounded-full bg-white object-contain p-1"
               />

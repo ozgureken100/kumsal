@@ -1,17 +1,17 @@
 import { MessageCircle, ShieldCheck, Sparkles } from 'lucide-react'
-import { waLink } from '../data'
+import { asset, waLink } from '../data'
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-[82vh] items-center justify-center overflow-hidden">
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="/hero.mp4"
+        src={asset('hero.mp4')}
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/pool-main-1.jpeg"
+        poster={asset('images/pool-main-1.jpeg')}
       />
       {/* Karanlık overlay: video daha görünür olsun diye hafifletildi */}
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-950/45 via-ocean-900/35 to-ocean-950/60" />

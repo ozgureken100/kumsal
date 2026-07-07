@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { carouselItems } from '../data'
+import { asset, carouselItems } from '../data'
 
 export default function Carousel() {
   const trackRef = useRef<HTMLDivElement>(null)
@@ -44,7 +44,7 @@ export default function Carousel() {
                 className="relative w-72 shrink-0 snap-start overflow-hidden rounded-xl sm:w-80"
               >
                 <img
-                  src={item.src}
+                  src={asset(item.src)}
                   alt={item.caption}
                   loading="lazy"
                   className="h-52 w-full object-cover transition duration-500 hover:scale-105 sm:h-56"

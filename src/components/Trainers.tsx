@@ -1,5 +1,5 @@
 import { Medal, Waves } from 'lucide-react'
-import { trainers } from '../data'
+import { asset, trainers } from '../data'
 
 export default function Trainers() {
   return (
@@ -29,7 +29,7 @@ export default function Trainers() {
               <div className="relative h-64 overflow-hidden bg-aqua-100">
                 {trainer.image ? (
                   <img
-                    src={trainer.image}
+                    src={asset(trainer.image)}
                     alt={trainer.name}
                     loading="lazy"
                     className="h-full w-full object-cover object-top"
