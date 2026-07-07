@@ -34,7 +34,7 @@ export default function About() {
               2008&apos;den beri binlerce kişiye yüzme öğretiyoruz
             </h2>
             <p className="mt-6 text-lg leading-relaxed">
-              Kumsal Yüzme Akademisi, 2008 yılından bu yana Ankara&apos;da bebeklerden yetişkinlere
+              Kumsal Yüzme Akademisi, 2008 yılından bu yana Ankara&apos;da çocuklardan yetişkinlere
               her yaş grubuna yüzme eğitimi veriyor. Amacımız yalnızca yüzme öğretmek değil; suyla
               sağlıklı, güvenli ve ömür boyu sürecek bir bağ kurdurmak.
             </p>

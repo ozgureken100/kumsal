@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { MessageCircle, ShieldCheck, Sparkles, Waves } from 'lucide-react'
+import { MessageCircle, ShieldCheck, Sparkles } from 'lucide-react'
 import { waLink } from '../data'
 
 export default function Hero() {
@@ -14,8 +13,8 @@ export default function Hero() {
         playsInline
         poster="/images/pool-main-1.jpeg"
       />
-      {/* Karanlık overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-ocean-950/70 via-ocean-900/60 to-ocean-950/80" />
+      {/* Karanlık overlay: video daha görünür olsun diye hafifletildi */}
+      <div className="absolute inset-0 bg-gradient-to-b from-ocean-950/45 via-ocean-900/35 to-ocean-950/60" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 py-24 text-center text-white sm:px-6">
         <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">
@@ -32,19 +31,15 @@ export default function Hero() {
           Çocuklar ve yetişkinler için Ankara&apos;nın nezih havuzlarında uzman eğitmenlerle yüzme
           dersleri
         </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link to="/#kayit" className="btn-primary w-full sm:w-auto">
-            <Waves size={20} />
-            Hemen Kayıt Ol
-          </Link>
+        <div className="mt-9 flex justify-center">
           <a
-            href={waLink('Merhaba, yüzme dersleri hakkında bilgi almak istiyorum.')}
+            href={waLink('Merhaba, yüzme dersleri hakkında bilgi almak ve kayıt olmak istiyorum.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-whatsapp w-full sm:w-auto"
+            className="btn-whatsapp w-full !bg-emerald-500/85 !shadow-md !shadow-emerald-500/20 hover:!bg-emerald-600/90 sm:w-auto"
           >
             <MessageCircle size={20} />
-            WhatsApp ile Bilgi Al
+            Hemen Kayıt & Bilgi Al
           </a>
         </div>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold text-white/80">

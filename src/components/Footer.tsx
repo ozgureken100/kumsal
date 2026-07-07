@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-md leading-relaxed">
-              2008&apos;den beri Ankara&apos;da bebek, çocuk ve yetişkinlere güvenli, hijyenik ve
+              2008&apos;den beri Ankara&apos;da çocuk ve yetişkinlere güvenli, hijyenik ve
               profesyonel yüzme eğitimi.
             </p>
           </div>

@@ -17,7 +17,7 @@ export interface CarouselItem {
 export const carouselItems: CarouselItem[] = [
   { src: '/images/pool-main-1.jpeg', caption: 'Havuzdan kareler' },
   { src: '/images/pool-main-2.jpeg', caption: 'Eğitim havuzu' },
-  { src: '/images/class-group-1.jpeg', caption: 'Bebek yüzme' },
+  { src: '/images/class-group-1.jpeg', caption: 'Grup dersi' },
   { src: '/images/class-group-2.jpeg', caption: 'Çocuk grupları' },
   { src: '/images/kurs-programi.jpeg', caption: 'Kurs duyuruları' },
   { src: '/images/ozel-ders.jpeg', caption: 'Özel ders' },
@@ -37,16 +37,6 @@ export interface Program {
 }
 
 export const programs: Program[] = [
-  {
-    id: 'bebek-yuzme',
-    title: 'Bebek Yüzme',
-    image: '/images/pool-main-2.jpeg',
-    description:
-      'Bebeklerin suyla ilk tanışması için ebeveyn eşliğinde, güvenli ve oyun temelli su alıştırma seansları.',
-    age: '6 ay – 3 yaş',
-    duration: '30 dk / seans',
-    features: ['Ebeveyn eşliğinde ders', 'Isıtılmış eğitim havuzu', 'Oyun temelli su alıştırması'],
-  },
   {
     id: 'cocuk-yuzme',
     title: 'Çocuk Yüzme',
@@ -126,8 +116,8 @@ export const trainers: Trainer[] = [
   {
     name: 'Sıla Hoca',
     role: 'Yüzme Antrenörü',
-    experience: 'Bebek ve çocuk yüzme alanında deneyimli',
-    expertise: 'Bebek yüzme, kadınlara özel dersler',
+    experience: 'Çocuk yüzme ve kadınlara özel derslerde deneyimli',
+    expertise: 'Çocuk grupları, kadınlara özel dersler',
     image: '/images/trainer-sila.jpeg',
   },
   {
@@ -147,7 +137,7 @@ export const trainers: Trainer[] = [
 ]
 
 /* ---------- Galeri ---------- */
-export type GalleryCategory = 'Bebek' | 'Çocuk' | 'Tesis' | 'Eğitim'
+export type GalleryCategory = 'Çocuk' | 'Tesis' | 'Eğitim'
 
 export interface GalleryItem {
   src: string
@@ -164,7 +154,7 @@ export const galleryItems: GalleryItem[] = [
   { src: '/images/class-group-1.jpeg', alt: 'Çocuk grup dersi', category: 'Çocuk' },
   { src: '/images/class-group-2.jpeg', alt: 'Grup dersinden bir kare', category: 'Çocuk' },
   { src: '/images/neden-kumsal.jpeg', alt: 'Kumsal yüzücüleri', category: 'Çocuk' },
-  { src: '/images/ozel-ders.jpeg', alt: 'Birebir özel ders', category: 'Bebek' },
+  { src: '/images/ozel-ders.jpeg', alt: 'Birebir özel ders', category: 'Eğitim' },
   { src: '/images/trainer-action.jpeg', alt: 'Ders anı', category: 'Eğitim' },
   { src: '/images/competition-1.jpeg', alt: 'Yarışma günü', category: 'Eğitim' },
   { src: '/images/competition-2.jpeg', alt: 'Müsabaka heyecanı', category: 'Eğitim' },
@@ -183,7 +173,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Yaş sınırı var mı? Kaç yaşından itibaren başlanabilir?',
     answer:
-      'Bebek yüzme programımız 6 aydan itibaren ebeveyn eşliğinde başlar. Çocuk grupları 4-14 yaş, yetişkin dersleri 15 yaş ve üzeri içindir. Yüzme öğrenmek için üst yaş sınırı yoktur.',
+      'Çocuk gruplarımız 4 yaşından itibaren başlar, yetişkin dersleri ise 15 yaş ve üzeri içindir. Yüzme öğrenmek için üst yaş sınırı yoktur.',
   },
   {
     question: 'Su korkum var, yine de öğrenebilir miyim?',
@@ -198,7 +188,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Dersler ne kadar sürüyor?',
     answer:
-      'Grup dersleri 60 dakika, bebek yüzme seansları 30 dakika, özel dersler 45-60 dakikadır. Programlar haftada 1 veya 2 gün olacak şekilde planlanır.',
+      'Grup dersleri 60 dakika, özel dersler 45-60 dakikadır. Programlar haftada 1 veya 2 gün olacak şekilde planlanır.',
   },
   {
     question: 'Hangi şubeyi seçmeliyim?',

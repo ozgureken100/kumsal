@@ -10,7 +10,7 @@ export default function Programs() {
           <span className="section-eyebrow">Programlarımız</span>
           <h2 className="section-title">Her yaşa ve seviyeye uygun program</h2>
           <p className="mt-4 text-lg">
-            Bebek yüzmesinden performans yüzücülüğüne, hedefinize uygun programı birlikte
+            Çocuk yüzmesinden performans yüzücülüğüne, hedefinize uygun programı birlikte
             belirleyelim.
           </p>
         </div>

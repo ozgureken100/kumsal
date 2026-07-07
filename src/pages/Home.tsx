@@ -12,7 +12,7 @@ import { usePageMeta } from '../hooks/usePageMeta'
 export default function Home() {
   usePageMeta(
     "Kumsal Yüzme Akademisi | Ankara'da Profesyonel Yüzme Dersleri",
-    "2008'den beri Ankara'da bebek, çocuk, yetişkin ve özel yüzme dersleri. Kızılay, Batıkent ve Söğütözü şubelerimizde uzman eğitmenlerle güvenli yüzme eğitimi.",
+    "2008'den beri Ankara'da çocuk, yetişkin ve özel yüzme dersleri. Kızılay, Batıkent ve Söğütözü şubelerimizde uzman eğitmenlerle güvenli yüzme eğitimi.",
   )
 
   return (

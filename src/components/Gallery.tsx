@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
 import { galleryItems, type GalleryCategory } from '../data'
 
-const categories: Array<'Tümü' | GalleryCategory> = ['Tümü', 'Bebek', 'Çocuk', 'Tesis', 'Eğitim']
+const categories: Array<'Tümü' | GalleryCategory> = ['Tümü', 'Çocuk', 'Tesis', 'Eğitim']
 
 export default function Gallery() {
   const [active, setActive] = useState<(typeof categories)[number]>('Tümü')
