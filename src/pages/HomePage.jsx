@@ -2,11 +2,12 @@ import {
   Award,
   ChevronRight,
   MessageCircle,
-  PlayCircle,
+  Move3d,
   Star,
 } from "lucide-react";
 import { Header } from "../components/Header";
 import { LeadForm } from "../components/LeadForm";
+import { PoolExperience } from "../components/PoolExperience";
 import { Seo } from "../components/Seo";
 import {
   brand,
@@ -48,23 +49,12 @@ export function HomePage() {
 function Hero() {
   return (
     <section className="hero" id="anasayfa">
-      <div className="hero-media" aria-hidden="true">
-        <picture>
-          <source srcSet="/assets/hero-pool.webp" type="image/webp" />
-          <img src="/assets/hero-pool.jpg" alt="" />
-        </picture>
-        <video autoPlay muted loop playsInline poster="/assets/hero-pool.jpg">
-          <source src="/assets/hero-pool-loop.webm" type="video/webm" />
-        </video>
-        <iframe
-          title="Havuz suyu video arka planı"
-          src="https://www.youtube.com/embed/Id8oZS95KxQ?autoplay=1&mute=1&controls=0&loop=1&playlist=Id8oZS95KxQ&playsinline=1&rel=0&modestbranding=1"
-          allow="autoplay; encrypted-media"
-          loading="lazy"
-        />
+      <div className="hero-media">
+        <PoolExperience />
       </div>
       <div className="hero-overlay" />
       <div className="hero-content">
+        <span className="hero-eyebrow">ANKARA'NIN YÜZME AKADEMİSİ</span>
         <h1>Güvenli ve Profesyonel Yüzme Eğitimi</h1>
         <p>Çocuklar ve yetişkinler için uzman eğitmenlerle yüzme dersleri</p>
         <div className="hero-actions">
@@ -74,10 +64,8 @@ function Hero() {
             <MessageCircle size={20} /> WhatsApp ile Bilgi Al
           </a>
         </div>
+        <p className="hero-explore-note"><Move3d size={17} /> 3B tesisi keşfetmek için sahneyi sürükleyin.</p>
       </div>
-      <a className="hero-video-note" href="#programlar" aria-label="Programlara git">
-        <PlayCircle size={22} />
-      </a>
     </section>
   );
 }

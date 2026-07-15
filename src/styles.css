@@ -209,8 +209,118 @@ textarea {
 .hero-media {
   position: absolute;
   inset: 0;
-  z-index: -3;
+  z-index: 0;
   background: var(--navy-950);
+}
+
+.pool-experience,
+.pool-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.pool-experience {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(25, 197, 216, 0.2), transparent 35%),
+    linear-gradient(145deg, #031d34, #052f51 58%, #021729);
+}
+
+.pool-experience.is-fallback {
+  background:
+    linear-gradient(90deg, rgba(0, 31, 60, 0.72), rgba(0, 52, 95, 0.18)),
+    url("/assets/hero-pool.webp") center / cover;
+}
+
+.pool-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.pool-canvas canvas:active {
+  cursor: grabbing;
+}
+
+.experience-topline {
+  position: absolute;
+  top: 100px;
+  right: clamp(18px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+.experience-topline > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(0, 31, 60, 0.48);
+  backdrop-filter: blur(12px);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50%;
+  background: #45f0ca !important;
+  box-shadow: 0 0 0 5px rgba(69, 240, 202, 0.14);
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.scene-focus {
+  position: absolute;
+  z-index: 4;
+  right: clamp(88px, 7vw, 112px);
+  bottom: 32px;
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.scene-focus button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(0, 31, 60, 0.48);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: transform 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.scene-focus button:hover,
+.scene-focus button:focus-visible,
+.scene-focus button.is-active {
+  color: #002b4d;
+  background: #b8f5ff;
+  transform: translateY(-2px);
+}
+
+.webgl-fallback {
+  position: absolute;
+  right: 20px;
+  bottom: 82px;
+  max-width: 300px;
+  padding: 10px 12px;
+  color: var(--white);
+  background: rgba(0, 31, 60, 0.7);
 }
 
 .hero-media iframe,
@@ -255,7 +365,8 @@ textarea {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
   background:
     linear-gradient(90deg, rgba(0, 31, 60, 0.7) 0%, rgba(0, 52, 95, 0.36) 48%, rgba(0, 52, 95, 0.1) 100%),
     linear-gradient(180deg, rgba(0, 31, 60, 0.18), rgba(0, 31, 60, 0.34));
@@ -274,8 +385,37 @@ textarea {
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   width: min(760px, 100%);
   color: var(--white);
+  pointer-events: none;
+}
+
+.hero-content a,
+.hero-content button {
+  pointer-events: auto;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #a9f4ff;
+  font-size: 0.77rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.hero-explore-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px !important;
+  font-size: 0.8rem !important;
+  font-weight: 750 !important;
+  opacity: 0.72;
 }
 
 .hero h1,
@@ -904,6 +1044,11 @@ details p {
   }
 }
 
+@keyframes livePulse {
+  0%, 100% { opacity: 0.65; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
 @media (max-width: 1120px) {
   .phone-link {
     display: none;
@@ -975,6 +1120,33 @@ details p {
     padding-top: 118px;
   }
 
+  .experience-topline {
+    top: 88px;
+    right: 18px;
+  }
+
+  .desktop-control {
+    display: none !important;
+  }
+
+  .scene-focus {
+    right: 18px;
+    bottom: 78px;
+    left: 18px;
+    overflow-x: auto;
+    justify-content: flex-end;
+    padding: 4px 0;
+    scrollbar-width: none;
+  }
+
+  .scene-focus::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scene-focus button {
+    flex: 0 0 auto;
+  }
+
   .stats-band,
   .two-col,
   .local-content,
@@ -1040,6 +1212,29 @@ details p {
 
   .hero-video-note {
     display: none;
+  }
+
+  .hero {
+    align-items: flex-start;
+    padding-bottom: 106px;
+  }
+
+  .hero-content {
+    margin-top: 16px;
+  }
+
+  .hero-explore-note {
+    display: none;
+  }
+
+  .scene-focus {
+    justify-content: flex-start;
+  }
+
+  .scene-focus button {
+    min-height: 34px;
+    padding: 0 11px;
+    font-size: 0.76rem;
   }
 
   .stats-band {
